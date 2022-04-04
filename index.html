@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Menu de navegacion</title>
+</head>
+<body>
+    
+        <div class="navegacion">
+            <ul>
+                <li class="lista activado">
+                    <a href="#">
+                        <span class="icono">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="texto">Home</span>
+                    </a>
+                </li>
+                <li class="lista">
+                    <a href="#">
+                        <span class="icono">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="texto">Profil</span>
+                    </a>
+                </li>
+                <li class="lista">
+                    <a href="#">
+                        <span class="icono">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                        </span>
+                        <span class="texto">Msj</span>
+                    </a>
+                </li>
+                <li class="lista">
+                    <a href="#">
+                        <span class="icono">
+                            <ion-icon name="heart-outline"></ion-icon>
+                        </span>
+                        <span class="texto">Likes</span>
+                    </a>
+                </li>
+                <li class="lista">
+                    <a href="#">
+                        <span class="icono">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="texto">Settings</span>
+                    </a>
+                </li>
+                <!-- Cirulo de los iconos -->
+                <div class="indicador"></div>
+            </ul>
+        </div>
+        <!-- Con este script llamas al main js -->
+        <script src="main.js"></script>
+        <!-- Este script es para importar los iconos que utilizo, ionicons se llama la pagina -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>       
+</body>
+</html>

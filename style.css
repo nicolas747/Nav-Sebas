@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Yo prediero definir los colores de una vez aca y darles un nombre de variable, asi me evito tener el desorden de los colores, si quieres hacer cambios a los colores, debes hacerlos aqui y verificar los nombres de las variables */
+:root{
+    --clr: #1f2025;
+    --clr-2:#f29175;
+    --clr-3:#fff;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--clr);
+}
+
+.navegacion{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: var(--clr-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.navegacion ul{
+    display: flex;
+    width: 350px;
+}
+
+.navegacion ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navegacion ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navegacion ul li a .icono{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr-3);
+}
+
+.navegacion ul li.activado a .icono{
+    transform: translateY(-32px);
+}
+
+.navegacion ul li a .texto{
+    position: absolute;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    transform: translatey(20px);
+    color: var(--clr-3);
+    opacity: 0;
+}
+
+.navegacion ul li.activado a .texto{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+/* Esto ayuda a que el desplazamiento del circulo se haga bien entre los iconos */
+.navegacion ul li:nth-child(1).activado ~ .indicador{
+    transform: translateX(calc(70px*0));
+}
+
+.navegacion ul li:nth-child(2).activado ~ .indicador{
+    transform: translateX(calc(70px*1));
+}
+
+.navegacion ul li:nth-child(3).activado ~ .indicador{
+    transform: translateX(calc(70px*2));
+}
+
+.navegacion ul li:nth-child(4).activado ~ .indicador{
+    transform: translateX(calc(70px*3));
+}
+
+.navegacion ul li:nth-child(5).activado ~ .indicador{
+    transform: translateX(calc(70px*4));
+}
+
+/* El indicador es el div que esta solo, o sea, el circulo del icono */
+.indicador{
+    position: absolute;
+    top: -50%;
+    border-radius: 50px;
+    border: 6px solid var(--clr);
+    width: 70px;
+    height: 70px;
+    transition: 0.5s;
+    background: var(--clr-2);
+}
+
+.indicador::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: -1px -10px 0 0 var(--clr);
+}
+.indicador::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right:-22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 var(--clr);
+}
